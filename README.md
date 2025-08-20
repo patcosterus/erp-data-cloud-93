@@ -1,73 +1,188 @@
-# Welcome to your Lovable project
 
-## Project info
+# Dashboard Financeiro - Agência Digital
 
-**URL**: https://lovable.dev/projects/7e32f660-133f-4a36-b0f1-63a0d273b375
+Um dashboard completo para gestão financeira de agências digitais, com foco em projetos SEO, ADS e desenvolvimento web.
 
-## How can I edit this code?
+## 🚀 Tecnologias
 
-There are several ways of editing your application.
+- **React 18** - Biblioteca principal
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Estilização
+- **Vite** - Build tool
+- **React Query** - Gerenciamento de estado e cache
+- **React Router** - Roteamento
+- **Shadcn/UI** - Componentes UI
+- **Lucide React** - Ícones
+- **Recharts** - Gráficos
 
-**Use Lovable**
+## 🏗️ Arquitetura
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7e32f660-133f-4a36-b0f1-63a0d273b375) and start prompting.
+```
+src/
+├── components/
+│   ├── ui/              # Componentes base do Shadcn
+│   ├── layout/          # Componentes de layout
+│   └── financial/       # Componentes específicos do financeiro
+├── hooks/               # Custom hooks
+├── services/            # Camada de dados e APIs
+├── types/               # Definições TypeScript
+├── utils/               # Funções utilitárias
+├── pages/               # Páginas da aplicação
+└── integrations/        # Integrações externas (Supabase)
+```
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📊 Funcionalidades
 
-**Use your preferred IDE**
+### Dashboard Financeiro
+- **KPIs em tempo real**: Receita, custos, lucratividade, clientes ativos
+- **Gestão de custos**: Fixos e variáveis com alertas de vencimento
+- **Acompanhamento de projetos**: Status, orçamento, gastos
+- **Análise de clientes**: Receita por cliente, projetos ativos
+- **Gráficos interativos**: Despesas mensais, tendências
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Otimizações Implementadas
+- **React Query**: Cache inteligente e sincronização de dados
+- **Lazy Loading**: Componentes carregados sob demanda
+- **Error Boundaries**: Tratamento robusto de erros
+- **TypeScript**: Tipagem completa para maior confiabilidade
+- **Custom Hooks**: Lógica reutilizável e separação de responsabilidades
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Instalação e Desenvolvimento
 
-Follow these steps:
+### Pré-requisitos
+- Node.js 18+
+- npm ou yarn
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Instalação
+```bash
+# Clone o repositório
+git clone <url-do-repositorio>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Instale as dependências
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Scripts Disponíveis
+```bash
+npm run dev          # Servidor de desenvolvimento
+npm run build        # Build para produção
+npm run preview      # Preview do build
+npm run lint         # Verificação de código
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎨 Personalização
 
-**Use GitHub Codespaces**
+### Tema
+O projeto usa um sistema de cores baseado em HSL definido no `tailwind.config.ts`. Para personalizar:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Edite as variáveis CSS em `src/index.css`
+2. Ajuste as cores no `tailwind.config.ts`
+3. Use apenas as classes semânticas (primary, secondary, accent, etc.)
 
-## What technologies are used for this project?
+### Componentes
+Todos os componentes seguem o padrão Shadcn/UI e podem ser personalizados através das classes Tailwind.
 
-This project is built with:
+## 📈 Performance
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Otimizações Implementadas
+- **Code Splitting**: Divisão automática do código
+- **Tree Shaking**: Remoção de código não utilizado
+- **Memoização**: React.memo em componentes críticos
+- **Lazy Loading**: Carregamento sob demanda
+- **Bundle Optimization**: Configuração otimizada do Vite
 
-## How can I deploy this project?
+### Métricas de Performance
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
+- **Cumulative Layout Shift**: < 0.1
+- **First Input Delay**: < 100ms
 
-Simply open [Lovable](https://lovable.dev/projects/7e32f660-133f-4a36-b0f1-63a0d273b375) and click on Share -> Publish.
+## 🔒 Segurança
 
-## Can I connect a custom domain to my Lovable project?
+- **TypeScript**: Tipagem estática previne erros comuns
+- **Error Boundaries**: Isolamento de falhas
+- **Sanitização**: Dados validados antes da renderização
+- **HTTPS**: Comunicação segura (em produção)
 
-Yes, you can!
+## 📦 Deploy
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Build para Produção
+```bash
+npm run build
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Deploy Automático
+O projeto está configurado para deploy automático em plataformas como:
+- Vercel
+- Netlify
+- GitHub Pages
+
+### Variáveis de Ambiente
+Copie `.env.example` para `.env` e configure:
+```env
+VITE_SUPABASE_URL=sua_url_supabase
+VITE_SUPABASE_ANON_KEY=sua_chave_supabase
+```
+
+## 🧪 Testes
+
+### Executar Testes
+```bash
+npm run test          # Testes unitários
+npm run test:e2e      # Testes end-to-end
+npm run test:coverage # Cobertura de testes
+```
+
+### Estrutura de Testes
+```
+tests/
+├── unit/            # Testes unitários
+├── integration/     # Testes de integração
+└── e2e/            # Testes end-to-end
+```
+
+## 📋 Roadmap
+
+### Próximas Funcionalidades
+- [ ] Relatórios PDF automatizados
+- [ ] Integração com OpenAI para insights
+- [ ] Sistema de notificações push
+- [ ] Dashboard mobile nativo
+- [ ] Integração com bancos (Open Banking)
+- [ ] Previsões financeiras com IA
+
+### Melhorias Técnicas
+- [ ] Service Worker para cache offline
+- [ ] PWA (Progressive Web App)
+- [ ] Internacionalização (i18n)
+- [ ] Tema dark/light automático
+- [ ] Acessibilidade (WCAG 2.1)
+
+## 🤝 Contribuição
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 👥 Equipe
+
+- **Desenvolvedor Principal**: [Seu Nome]
+- **Designer**: [Nome do Designer]
+- **Product Owner**: [Nome do PO]
+
+## 📞 Suporte
+
+Para suporte, envie um email para suporte@agencia.com ou abra uma issue no GitHub.
+
+---
+
+**Desenvolvido com ❤️ para agências digitais que querem crescer com dados.**
