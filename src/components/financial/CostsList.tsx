@@ -10,11 +10,21 @@ import { Cost } from "@/types/financial";
 
 const StatusBadge = ({ status }: { status: Cost['status'] }) => {
   const config = getStatusConfig(status);
-  const IconComponent = {
-    AlertTriangle,
-    Clock,
-    CheckCircle
-  }[config.icon as keyof typeof { AlertTriangle: any, Clock: any, CheckCircle: any }];
+  
+  const getIconComponent = (iconName: string) => {
+    switch (iconName) {
+      case 'AlertTriangle':
+        return AlertTriangle;
+      case 'Clock':
+        return Clock;
+      case 'CheckCircle':
+        return CheckCircle;
+      default:
+        return AlertTriangle;
+    }
+  };
+
+  const IconComponent = getIconComponent(config.icon);
 
   return (
     <Badge variant={config.variant as any}>
