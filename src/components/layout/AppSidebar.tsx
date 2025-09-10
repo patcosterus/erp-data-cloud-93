@@ -32,22 +32,22 @@ export function AppSidebar() {
   const isActive = (path: string) => currentPath === path;
   const getNavClasses = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "bg-primary/10 text-primary font-medium border-r-2 border-primary" 
-      : "hover:bg-muted/50 text-foreground";
+      ? "bg-gradient-to-r from-primary/15 to-primary/5 text-primary font-semibold border-r-2 border-primary shadow-sm" 
+      : "hover:bg-muted/50 text-foreground hover:text-primary transition-all duration-200";
 
   return (
     <Sidebar className={isCollapsed ? "w-16" : "w-64"} collapsible="icon">
-      <SidebarContent className="bg-card border-r border-border">
+      <SidebarContent className="bg-gradient-subtle border-r border-border/50 backdrop-blur-sm">
         {/* Logo Section */}
-        <div className="p-generous border-b border-border">
+        <div className="p-6 border-b border-border">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <BarChart3 className="w-4 h-4 text-white" />
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center shadow-lg">
+              <BarChart3 className="w-5 h-5 text-white" />
             </div>
             {!isCollapsed && (
-              <div>
+              <div className="animate-fade-in">
                 <h2 className="font-bold text-lg text-foreground">Cloud Market</h2>
-                <p className="text-sm text-muted-foreground">ERP Inteligente</p>
+                <p className="text-sm text-muted-foreground">ERP Moderno</p>
               </div>
             )}
           </div>
